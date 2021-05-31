@@ -1,0 +1,53 @@
+<html>
+<script>
+    var arr=new Array();
+    var x = document.getElementById("input").value;
+    //var a = 0;
+    function pushElements()
+    {
+    var x = document.getElementById("input").value;    
+     arr.push(x);
+      document.getElementById("events").innerHTML="Added Successfully";
+    }
+     
+    function popElements()
+    {
+    var x = document.getElementById("input").value;    
+      arr.pop();  
+       document.getElementById("events").innerHTML="Removed Successfully";
+    }
+
+
+    function display()
+    {
+        if(arr.length == 0)
+        {
+         document.getElementById("events").innerHTML="Event array is empty";    
+        }
+        else{
+            var e ="The Events in the array ";
+            
+    for (var i=0; i<arr.length; i++)
+   {
+     
+      e +=  "<br/>"+arr[i] + "<br >";
+   }
+       document.getElementById("events").innerHTML=e; 
+    }
+    
+    }
+</script>
+
+<body>
+   <h1>Events List<h1>
+   Enter the Events : <input type="text" id="input">
+   <br>
+   <button id="push" onclick="pushElements()">Push</button>
+   <button id="pop"  onclick="popElements()">Pop</button>
+   <button id="display" onclick="display()">Display</button>
+   <br>
+   <div id="events">
+       
+   </div>
+</body>
+</html>
